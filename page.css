@@ -3,7 +3,7 @@ body {
     background-color: #f2f2f2;
   }
   
-  .main-nav {
+  .nav {
     display: flex;
     margin: 10px 0;
     list-style: none;
@@ -12,22 +12,34 @@ body {
     gap: 3em;
     font-size: 1.3em;
     font-weight: 500;
-    height: 50px;
     background-color: tomato;
+    margin-top: 50px;
   }
-  
+  .main-nav {
+    display: flex;
+    margin: 10px 0;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    font-size: 1.3em;
+  }
+
   .main-nav > * {
     cursor: pointer;
   }
-  
+
   .main-nav > li:hover {
     color: #f2f2f2;
   }
-  
+
   .nested-nav:hover .hidden-nav {
     display: block;
   }
-  
+  .toggle {
+    display: none;
+  }
+
   .hidden-nav {
     display: none;
     background-color: grey;
@@ -38,10 +50,13 @@ body {
   .hidden-nav > li {
     padding: 10px;
   }
-  
+
   .hidden-nav > li:hover {
     color: tomato;
   }
+
+  
+
   .main-container {
     display: flex;
     justify-content: center;
@@ -113,3 +128,36 @@ body {
     border: 1px solid grey;
     padding: 10px;
   }
+
+
+  @media (max-width: 500px) {
+    .nav {
+      display: block;
+      flex-direction: column;
+      line-height: 2;
+      height: 100%;
+      padding: 17px 5px;
+      align-items: center;
+      width: -webkit-fill-available;
+
+    }
+    .main-nav {
+      display: block;
+      flex-direction: column;
+      padding: 14px 26px;
+      line-height: 3;
+    }
+    .toggle {
+      display: block;
+      position: absolute;
+      left: 90%;
+      color: rgb(24, 22, 22);
+      font-size: 20px;
+      top: 171px;
+    }
+    .nav-links {
+      display: none;
+    }
+    .nav-links.active {
+      display: block;
+    }

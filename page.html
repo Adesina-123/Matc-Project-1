@@ -5,23 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="page.css">
+    <script
+    defer
+    src="https://kit.fontawesome.com/15ff4cd3be.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
 <body>
     <div class="main-container">
         <h3 class="title">Welcome to the MATC Blog Channel</h3>
       </div>
-      <ul class="main-nav">
-        <li>Home</li>
-        <li class="nested-nav">
-          Contact
-          <ul class="hidden-nav">
-            <li>Location</li>
-            <li>Agents</li>
+      <div class="nav">
+        <a href="#" class="toggle"><i class="fas fa-bars"></i></a>
+        <div class="nav-links">
+          <ul class="main-nav">
+            <li>Home</li>
+            <li class="nested-nav">
+              Contact
+              <ul class="hidden-nav">
+                <li>Location</li>
+                <li>Agents</li>
+              </ul>
+            </li>
+            <li>Careers</li>
+            <li>Blog</li>
           </ul>
-        </li>
-        <li>Careers</li>
-        <li>Blog</li>
-      </ul>
+        </div>
+      </div>
       <p>Top News</p>
       <div class="generic">
         <!-- Top News -->
@@ -50,5 +60,6 @@
         </div>
         <!-- End Latest News -->
       </div>
+      <script src="page.js"></script>
 </body>
 </html>
