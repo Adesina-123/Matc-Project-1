@@ -20,7 +20,12 @@ function writeArrayToDOM(){
     activityList.forEach(function(activity, index){
         // CREATE CHILD ELEMENT
         const newActivityDom = document.createElement("div")
-        newActivityDom.className = "activity-list-item"
+        if (activity.completed) {
+            newActivityDom.className = "activity-list-item strike-through" 
+        }else {
+            newActivityDom.className = "activity-list-item"
+        }
+     
         newActivityDom.setAttribute("data-id", index)
 
         // CREATE CHILD ELEMENTS WITH INNERHTML
@@ -39,8 +44,10 @@ function writeArrayToDOM(){
             let checkbox = document.querySelector(`.checkbox${index}`)
             if(checkbox.checked == true){
                 document.querySelector(`[data-id="${index}"]`).className = "activity-list-item strike-through"
+                activityList[index].completed = true;
             }else{
                 document.querySelector(`[data-id="${index}"]`).className = "activity-list-item"
+                activityList[index].completed = false;
             }
 
         }
@@ -54,7 +61,10 @@ function writeArrayToDOM(){
         
         deleteActivityButton.className="far fa-trash-alt trash"
         deleteActivityButton.onclick = function(){
-            alert("Delete Activity?")
+          if(confirm("Delete Activity")) {
+              activityList.splice(index,1)
+              writeArrayToDOM()
+          }
         }
 
         // APPEND DELETE BUTTON
